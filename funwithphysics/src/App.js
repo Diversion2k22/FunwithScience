@@ -260,6 +260,11 @@ const App = () => {
           ></Route>
           <Route
             exact
+            path="/geometry/calc/:topic"
+            element={<CalCircle />}
+          ></Route>
+          <Route
+            exact
             path="/algebra/calc/:topic"
             element={<CalcComplexNumber />}
           ></Route>
