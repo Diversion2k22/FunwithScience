@@ -55,6 +55,28 @@ export default function Algebra() {
       process:
         'Addition = (x1 + x2) + i (y1 + y2)',
     },
+    {
+      topic:"Exponents",
+      details:[
+        "Exponentiation refers to repeated multiplication of a given number with itself certain number of times.Square-Root of a given number is defined as the factor of the number which when multiplied with itself gives the given number.Cube-Root of a given number is the number which when multiplied thrice with itself gives the given number."
+      ],
+      formula:[
+        "(y)^n=(y)*(y)*(y)*(y)...n times"
+      ],
+      process:[
+        "To find x raised to the power n we need to multiply x with itself n times."
+      ],
+    },
+    {
+      topic: "Quadratic Equation",
+      details: `Quadratic equations are second-degree algebraic expressions and are of the form ax2 + bx + c = 0.`,
+      formula: "For quadratic equation ax^2 +bx+c, the roots are <br/> x1,x2=[-b ± √(b² - 4ac)]/2a",
+      process:`The quadratic equation in its standard form is ax2 + bx + c = 0.
+      The discriminant of the quadratic equation is D = b^2 - 4ac
+      For D > 0 the roots are real and distinct.
+      For D = 0 the roots are real and equal.
+      For D < 0 the roots do not exist, or the roots are imaginary.`,
+    }
   ];
 
   return (
