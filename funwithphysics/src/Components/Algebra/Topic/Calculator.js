@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Form, Button} from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import Navbar from "../../Navbar/Navbar";
 import { useParams } from "react-router";
 import "./Calculator.css";
 import { useEffect } from "react";
-  
 
 function Calculator() {
   let { topic } = useParams();
@@ -139,35 +138,69 @@ function Calculator() {
       ],
     },
     {
-      topic:"Exponents",
-      details:[
-        "Exponentiation refers to repeated multiplication of a given number with itself certain number of times.Square-Root of a given number is defined as the factor of the number which when multiplied with itself gives the given number.Cube-Root of a given number is the number which when multiplied thrice with itself gives the given number."
+      topic: "Exponents",
+      details: [
+        "Exponentiation refers to repeated multiplication of a given number with itself certain number of times. Square-Root of a given number is defined as the factor of the number which when multiplied with itself gives the given number. Cube-Root of a given number is the number which when multiplied thrice with itself gives the given number.",
       ],
-      formula:[
-        "(y)^n=(y)*(y)*(y)*(y)...n times"
+      formula: ["(y)ⁿ=(y)*(y)*(y)*(y)...n times"],
+      process: [
+        "To find x raised to the power n we need to multiply x with itself n times.",
       ],
-      process:[
-        "To find x raised to the power n we need to multiply x with itself n times."
-      ],
-      example:[
+      example: [
         "2 raised to the power 3 is simply 2*2*2=8",
-        <br/>,
+        <br />,
         "Square Root of 16 is a number(say a) such that a*a=16 ,which on computation gives 4.",
-        <br/>,
-        "Cube root of 125 is a number (say b) such that b*b*b=125, which on computation gives 5."
-      ]
+        <br />,
+        "Cube root of 125 is a number (say b) such that b*b*b=125, which on computation gives 5.",
+      ],
     },
     {
       topic: "Quadratic Equation",
-      details: ["Quadratic equations are the polynomial equations of degree 2 in one variable of type f(x) = ax2 + bx + c where a, b, c, ∈ R and a ≠ 0. It is the general form of a quadratic equation where ‘a’ is called the leading coefficient and ‘c’ is called the absolute term of f (x). The values of x satisfying the quadratic equation are the roots of the quadratic equation (α,β).The quadratic equation will always have two roots. The nature of roots may be either real or imaginary.",<br/>,"A quadratic polynomial, when equated to zero, becomes a quadratic equation. The values of x satisfying the equation are called the roots of the quadratic equation."],
-      formula: ["For quadratic equation ax^2 +bx+c, the roots are", <br/>,"x1,x2=[-b ± √(b² - 4ac)]/2a"],
-      process:[`The quadratic equation in its standard form is ax2 + bx + c = 0.`,<br/>,
-      `The discriminant of the quadratic equation is D = b^2 - 4ac`,<br/>,
-      `For D > 0 the roots are real and distinct.`,<br/>,
-      `For D = 0 the roots are real and equal.`,<br/>,
-      `For D < 0 the roots do not exist, or the roots are imaginary.`],
-      example:["Let the quadratic equation be x^2-5x+6 = 0",<br/>,"Comparing the equation with the general form ax2 + bx + c = 0 gives ",<br/>,"a = 1, b = -5 and c = 6",<br/>,"Since D > 0, the roots are real and distinct",<br/>,"Substitute the values in the quadratic formula",<br/>,"x1 = (-b + √b2-4ac)/2a",<br/>,"⇒ (5 + 1)/2",<br/>," = 3",<br/>,"x2 = (-b – √b2-4ac)/2a",<br/>," ⇒ (5 – 1)/2",<br/>,"= 2"],
-    }
+      details: [
+        "Quadratic equations are polynomial equations of degree 2 in one variable of the form f(x) = ax² + bx + c, where a, b, c, ∈ R and a ≠ 0. It is the general form of a quadratic equation in which 'a' is referred to as the leading coefficient and 'c' is referred to as the absolute term of f(x). The roots of the quadratic equation (α,β) are the values of 'x' that fulfil the quadratic equation. There will always be two roots to the quadratic equation. The nature of roots might be either real or fictitious.",
+        <br />,
+        "When equated to zero, a quadratic polynomial forms a quadratic equation. The roots of the quadratic equation are the values of 'x' that satisfy the equation.",
+      ],
+      formula: [
+        "For quadratic equation ax² +bx+c, the roots are",
+        <br />,
+        "x₁,x₂=[-b ± √(b² - 4ac)]/2a",
+      ],
+      process: [
+        `The quadratic equation in its standard form is ax² + bx + c = 0.`,
+        <br />,
+        `The discriminant of the quadratic equation is D = b² - 4ac`,
+        <br />,
+        `For D > 0 the roots are real and distinct.`,
+        <br />,
+        `For D = 0 the roots are real and equal.`,
+        <br />,
+        `For D < 0 the roots do not exist, or the roots are imaginary.`,
+      ],
+      example: [
+        "Let the quadratic equation be x²-5x+6 = 0",
+        <br />,
+        "Comparing the equation with the general form ax² + bx + c = 0 gives ",
+        <br />,
+        "a = 1, b = -5 and c = 6",
+        <br />,
+        "Since D > 0, the roots are real and distinct",
+        <br />,
+        "Substitute the values in the quadratic formula",
+        <br />,
+        "x₁ = (-b + √b²-4ac)/2a",
+        <br />,
+        "⇒ (5 + 1)/2",
+        <br />,
+        " = 3",
+        <br />,
+        "x₂ = (-b – √b²-4ac)/2a",
+        <br />,
+        " ⇒ (5 – 1)/2",
+        <br />,
+        "= 2",
+      ],
+    },
   ];
 
   const page = Topics.filter((data) => data.topic === topic);
@@ -447,65 +480,64 @@ function Calculator() {
     );
   };
 
-//Exponential Calculator
+  //Exponential Calculator
   const Exponents = () => {
     const [result, setResult] = useState(null);
     const [choice, setChoice] = useState("Power");
-    const [choiceData, setChoiceData] = useState
-    ({name: "Power",
-    quantities: ["Base", "Exponent"],
-    disabled: false});
+    const [choiceData, setChoiceData] = useState({
+      name: "Power",
+      quantities: ["Base", "Exponent"],
+      disabled: false,
+    });
     const [x, setX] = useState(null);
     const [n, setN] = useState(null);
-  
+
     useEffect(() => {
       if (choice === "Power") {
         return setChoiceData({
           name: "Power",
           quantities: ["Base", "Exponent"],
-          disabled: false
+          disabled: false,
         });
       } else if (choice === "SquareRoot") {
         setN(0.5);
         setChoiceData({
           name: "Square-Root",
           quantities: ["Base", "Exponent"],
-          disabled: true
+          disabled: true,
         });
       } else if (choice === "CubeRoot") {
         setN(0.3333);
         setChoiceData({
           name: "Cube-Root",
           quantities: ["Base", "Exponent"],
-          disabled: true
+          disabled: true,
         });
       }
     }, [choice]);
-  
+
     useEffect(() => {}, [choice, x, n, result]);
-  
+
     const calcResult = () => {
       let res = 1;
-      if (choice == "Power") 
-      res=Math.pow(x,n);
+      if (choice == "Power") res = Math.pow(x, n);
       else if (choice == "SquareRoot") res = Math.sqrt(x);
       else res = Math.cbrt(x);
-  
+
       setResult(res);
     };
-  
+
     const handleChange = (e) => {
       reset();
       setChoice(e.target.value);
     };
-  
+
     function reset() {
       setResult(null);
       setX(null);
-      if(choice=="Power")
-      setN(null);
+      if (choice == "Power") setN(null);
     }
-  
+
     return (
       <>
         <Form>
@@ -568,13 +600,6 @@ function Calculator() {
       </>
     );
   };
-
-
-
-
-
-
-
 
   // Statistics calculator
   const Statistics = () => {
@@ -860,7 +885,6 @@ function Calculator() {
       </>
     );
   };
-  
 
   //Complex Number Calculator
   const ComplexNumbers = () => {
@@ -1306,7 +1330,7 @@ function Calculator() {
   const QuadraticEquation = () => {
     const [a, seta] = useState(null);
     const [b, setb] = useState(null);
-    const [c,setc]=useState(null);
+    const [c, setc] = useState(null);
     const [x1, setx1] = useState(null);
     const [x2, setx2] = useState(null);
     const [result, setResult] = useState(null);
@@ -1322,48 +1346,45 @@ function Calculator() {
       setx1(null);
       setEquation(null);
     };
-    function discriminant(A,B,C) {
-      
-      const D=B*B-4*A*C;
-     // console.log(D);
-      if(D<0)
-        return 0;
+    function discriminant(A, B, C) {
+      const D = B * B - 4 * A * C;
+      // console.log(D);
+      if (D < 0) return 0;
       return 1;
     }
     const calcQuadratic = () => {
-      
-      if(a==0)
-        {
-          setResult("Value of a cannot be zero.");
-          return ;
-        }
-      const isValid=discriminant(a,b,c);
+      if (a == 0) {
+        setResult("Value of a cannot be zero.");
+        return;
+      }
+      const isValid = discriminant(a, b, c);
       console.log(isValid);
-      if(!isValid)
-      {
+      if (!isValid) {
         setResult("Roots are imaginary.");
+      } else {
+        let d = b * b - 4 * a * c;
+        d = Math.sqrt(d);
+        let x1 = (-b + d) / (2 * a);
+        let x2 = (-b - d) / (2 * a);
+        console.log(x1, x2);
+        setResult("Roots are " + x1 + " and " + x2);
       }
-      else
-      {
-        let d=b*b-4*a*c;
-        d=Math.sqrt(d);
-        let x1=(-b+d)/(2*a);
-        let x2=(-b-d)/(2*a);
-        console.log(x1,x2);
-        setResult("Roots are "+x1+" and "+x2);
-      }
-      
     };
 
-    const generateEquation=()=>{
-      
-      let sum=(parseFloat(x1)+parseFloat(x2));
-      sum=sum*-1;
-      let product=(parseFloat(x1)*parseFloat(x2));
+    const generateEquation = () => {
+      let sum = parseFloat(x1) + parseFloat(x2);
+      sum = sum * -1;
+      let product = parseFloat(x1) * parseFloat(x2);
       // console.log(sum,product);
-      const eq=("x^2"+(sum>0?"+":"")+sum+"x"+(product>0?"+":"")+product);
-      setEquation("Equation for the provided roots is "+eq);
-    }
+      const eq =
+        "x^2" +
+        (sum > 0 ? "+" : "") +
+        sum +
+        "x" +
+        (product > 0 ? "+" : "") +
+        product;
+      setEquation("Equation for the provided roots is " + eq);
+    };
 
     return (
       <>
@@ -1372,7 +1393,8 @@ function Calculator() {
             <Form.Text className="text">
               <strong>
                 {" "}
-                To find the roots of the quadratic equation, Enter the following values
+                To find the roots of the quadratic equation, Enter the following
+                values
               </strong>
               <br />
             </Form.Text>
@@ -1423,33 +1445,37 @@ function Calculator() {
           </Button>
         </div>
 
-        <div style={{fontWeight:"bold",margin:"50px", textAlign:"center"}}>OR</div>
+        <div
+          style={{ fontWeight: "bold", margin: "50px", textAlign: "center" }}
+        >
+          OR
+        </div>
 
         <Form>
           <Form.Group className="mb-4" controlId="text">
             <Form.Text className="text">
               <strong>
                 {" "}
-                Generate the quadraic equation by providing the roots. 
+                Generate the quadraic equation by providing the roots.
               </strong>
               <br />
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-4">
-            <Form.Label>Value of x1 </Form.Label>
+            <Form.Label>Value of x₁ </Form.Label>
             <Form.Control
               onChange={(e) => setx1(e.target.value)}
               type="number"
-              placeholder={"Enter the value of x1"}
+              placeholder={"Enter the value of x₁"}
               value={x1 === null ? "" : x1}
             />
           </Form.Group>
           <Form.Group className="mb-4">
-            <Form.Label>Value of x2</Form.Label>
+            <Form.Label>Value of x₂</Form.Label>
             <Form.Control
               onChange={(e) => setx2(e.target.value)}
               type="number"
-              placeholder={"Enter the value of x2"}
+              placeholder={"Enter the value of x₂"}
               value={x2 === null ? "" : x2}
             />
           </Form.Group>
@@ -1470,7 +1496,6 @@ function Calculator() {
             Reset
           </Button>
         </div>
-
       </>
     );
   };
@@ -1495,7 +1520,7 @@ function Calculator() {
         currentCall = ComplexNumbers();
         break;
       case "Exponents":
-        currentCall=Exponents();
+        currentCall = Exponents();
         break;
       case "Quadratic Equation":
         currentCall = QuadraticEquation();
