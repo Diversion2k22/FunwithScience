@@ -73,7 +73,7 @@ function MathsTopic() {
             </MathsTopicItem>
             <MathsTopicItem
               name="Trigonometry"
-              link="/"
+              link="/trigonometry"
               icon="icon-heart4"
               image={trigonometry}
             >
@@ -120,7 +120,7 @@ function MathsTopic() {
 						</MathsTopicItem> */}
             <MathsTopicItem
               name="Integration/Differentiation"
-              link="/"
+              link="/integration"
               icon="icon-home-outline"
               image={integration}
             >

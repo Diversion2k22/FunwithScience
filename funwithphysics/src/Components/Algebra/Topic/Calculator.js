@@ -11,34 +11,55 @@ function Calculator() {
   // topics_data
   const Topics = [
     {
-      topic: "Permutation",
-      details: `A permutation of a set is a loosely defined organisation of its members into a sequence or linear order, or a rearranging of its elements if the set is already sorted.
-      The word "permutation" also refers to the act or process of changing the linear order of an ordered set.`,
-      formula: "nPr = n!/(n-r)!",
+      topic: "Permutation And Combination",
+      details:[ `A permutation of a set is a loosely defined organisation of its members into a sequence or linear order, or a rearranging of its elements if the set is already sorted.
+      The word "permutation" also refers to the act or process of changing the linear order of an ordered set.It is denoted by nPr.`,
+      <br />,
+      `On the other hand,Combination is a mathematical technique for determining the number of possible arrangements in a group of objects where the order of the items is irrelevant. Selecting r objects out of the given n objects is given by using the factorials. It is denoted by nCr.`
+      ],
+      formula: [`nPr = n!/(n-r)!`,
+      <br/>,
+      `nCr = n!/r!(n-r)!`
+      ],
+
       process: [
         "To find the permutation, first we need to find the value of n factorial and n - r factorial, then we need to devide them.",
         <br />,
-      ],
-      example: [
-        <span>
-          10<b style={{ fontSize: 25 + "px" }}>P</b>5 = 10!/(10-5)! = 30240
-        </span>,
-      ],
-    },
-    {
-      topic: "Combination",
-      details: `A combination is a mathematical technique for determining the number of possible arrangements in a group of objects where the order of the items is irrelevant. Selecting r objects out of the given n objects is given by using the factorials. It is denoted by nCr.`,
-      formula: "C = n!/r!(n-r)!",
-      process: [
         "To calculate combinations, we will use the formula nCr = n! / (r! * (n - r)!), where n represents the number of items, and r represents the number of items being chosen at a time.",
         <br />,
       ],
-      example: [
+      example1: [
         <span>
-          10<b style={{ fontSize: 25 + "px" }}>C</b>5 = 10!/5!(10-5)! = 252
+           <b>How many different teams(each having 5 members) can be formed from 12 students?</b>
+           <br/>
+           Solution:
+           There is nothing that indicates that the order in which the team members are selected is important
+           <br/>
+            and therefore it is a combination problem. Hence the number of teams that can be formed
+           is the number of 
+           <br/>
+           ways of choosing 5 objects out 12 given by:
+           12 C 5 = 12! / [ (12 - 5)!5! ] = 792
+           <br/>
+        </span>,
+      ],
+      example2: [
+        <span>
+          <b>How many 3 letter words can we make with the letters in the word ABCD(without repetition)?</b>
+          <br/>
+          Solution: There are 4 letters in the word ABCD and the number of 3-letter words is similar to number of ways 
+          <br/>
+          of arranging 3 objects out of 4.Order is important here since ABC and CAB are different words.Hence after
+          <br/>
+           choosing of 3 letters we need to arrange them.
+
+          <br/>
+          The number of words is given by
+          4 P 3 = 4! / (4 - 3)! = 24
         </span>,
       ],
     },
+   
     {
       topic: "Progression",
       details: [
@@ -52,7 +73,7 @@ function Calculator() {
         "To find the Arithmetic progression of nᵗʰ term, we use the formula a + d * (n-1) where, 'a' is the first term of the series and 'd' is the common difference between any two numbers in the series found by taking the difference. To find the Geometric progression of nᵗʰ term, we use the formula a + r ⁽ⁿ⁻¹⁾ where, 'a' is the first term of the series and 'r' is the common difference between any two numbers in the series found by taking the ratio.",
         <br />,
       ],
-      example: [
+      example1: [
         "2,4,6,8.. is an AP because difference between any two consecutive terms in the series (common difference) is same (4 – 2 = 6 – 4 = 8 – 6 = 2).",
         <br />,
         "If ‘a’(2) is the first term and ‘d’(2) is the common difference,",
@@ -61,6 +82,8 @@ function Calculator() {
         <br />,
         "5th term of the AP = 2 + (5-1) * 2 = 10",
         <br />,
+      ],
+      example2: [
         <b>E.g. </b>,
         "2,4,8,16 is a GP because ratio of any two consecutive terms in the series (common difference) is same (4 / 2 = 8 / 4 = 16 / 8 = 2)",
         <br />,
@@ -80,16 +103,15 @@ function Calculator() {
 
         <br />,
       ],
-      example: [
+      example1: [
         "Numbers given: 20 30 60 20 10 40 80 90",
         <br />,
         "Mean = Sum of all items/Total no. of items = 350/8 = 43.75",
         <br />,
-        "Since total number of items is 6(even), Median = (n / 2)th = 3rd item = 30",
-        <br />,
         "Mode = 20 (as 20 occured most number of times in the given set of numbers)",
-        <br />,
-        "Standar deviation is calculated by deviations of each data point from the mean, and square the result of each whole divided by total number of samples minus 1.Hence it is , = 29.73",
+      ],
+      example2: [
+        "Standard deviation is calculated by deviations of each data point from the mean, and square the result of each whole divided by total number of samples minus 1.Hence it is , = 29.73",
         <br />,
         "Variance is square of standard deviation.Hence it is = 883.92",
         <br />,
@@ -114,7 +136,7 @@ function Calculator() {
         "A complex number Z = x + iy is a purely real if its imaginary part is 0, i.e. Im(z) = 0 and purely imaginary if its real part is 0 i.e. Re (z) = 0.",
         <br />,
       ],
-      example: [
+      example1: [
         "z₁ = 2 + 3i is first complex number equation, ",
 
         "z₂ = 5 + 10i is second complex number equation",
@@ -125,7 +147,8 @@ function Calculator() {
         <br />,
         <b>E.g. </b>,
         "Polar Form: √17(cos(1.816) + isin(1.816))",
-        <br />,
+      ],
+      example2: [
         "For Cartesian Form:",
         <br />,
         "z  =  (√17 × cos(1.816))  +  i(√17 × sin(1.816))",
@@ -146,13 +169,47 @@ function Calculator() {
       process: [
         "To find x raised to the power n we need to multiply x with itself n times.",
       ],
-      example: [
+      example1: [
         "2 raised to the power 3 is simply 2*2*2=8",
         <br />,
         "Square Root of 16 is a number(say a) such that a*a=16 ,which on computation gives 4.",
         <br />,
         "Cube root of 125 is a number (say b) such that b*b*b=125, which on computation gives 5.",
       ],
+    },
+    {
+      topic:"Probability",
+      details:[`The probability of an event represents the likelihood of the occurence of the event.
+
+          For an unbiased event(where all outcomes are equally likely to occur), the probability of the event E is the number of outcomes in E divided by the number of outcomes in the Sample Space. 
+          The probability of an event is a number between 0 and 1, where  0 indicates impossibility of the occurence of the event and 1 indicates that the event will surely occur.     
+      
+            `],
+       formula:[`P(E) = n(E)/n(S)`,
+       <br/>,
+       `where n(E) is the number of times the event E occurs and n(S) is the total possible occurence`],
+       process: ["To calculate the probability of occurence of an equally-likely event,",
+       <br/>,"we need to determine the following quantities:",
+       <br/>,"n(E): Number of outcomes favoring the occurence of the event",
+       <br/>,"n(S): Total Number of outcomes",
+       <br/>,"Probability of occurence then becomes P(E)=n(E)/n(S)"
+      ],
+       example1 :[
+         "Consider the Probability of First Event is P(A)=0.4 and that of the Second Event is P(B)=0.3.",
+         <br/>,
+         "Also consider the Probability of occurence of either of them is P(A ∪ B)=0.5",
+         <br/>,
+        "P(A') = 1-P(A) ,P(A')=1-0.4=0.6",
+        <br />,
+        "P(B') = 1-P(B) ,P(B')=1-0.3=0.7",
+        <br />,
+        "P(A ∩ B) = P(A)+P(B)-P(A ∪ B) ,P(E)=0.4+0.3-0.5=0.2",
+        <br />,
+        "P(only A) = P(A)-P(A ∩ B) ,P(E)=0.4-0.2=0.2",
+        <br />,
+        "P(only B) = P(B)-P(A ∩ B) ,P(E)=0.3-0.2=0.1",
+        <br />,
+       ],
     },
     {
       topic: "Quadratic Equation",
@@ -177,7 +234,7 @@ function Calculator() {
         <br />,
         `For D < 0 the roots do not exist, or the roots are imaginary.`,
       ],
-      example: [
+      example1: [
         "Let the quadratic equation be x²-5x+6 = 0",
         <br />,
         "Comparing the equation with the general form ax² + bx + c = 0 gives ",
@@ -188,8 +245,9 @@ function Calculator() {
         <br />,
         "Substitute the values in the quadratic formula",
         <br />,
-        "x₁ = (-b + √b²-4ac)/2a",
-        <br />,
+        "x₁ = (-b + √b²-4ac)/2a",        
+      ],
+      example2: [
         "⇒ (5 + 1)/2",
         <br />,
         " = 3",
@@ -206,58 +264,94 @@ function Calculator() {
   const page = Topics.filter((data) => data.topic === topic);
   const details = page[0];
 
-  //Permutationcalculator
-  const Permutation = () => {
-    const [n, setn] = useState(null);
-    const [r, setr] = useState(null);
-    const [result, setResult] = useState(null);
-    const reset = () => {
-      setn(null);
-      setr(null);
-      setResult(null);
-    };
-    function factorial(num) {
-      if (num === 0) {
-        return 1;
-      }
-      return num * factorial(num - 1);
-    }
-    const calcPermutation = () => {
-      let permutation = factorial(n) / factorial(n - r);
-      setResult(permutation);
-    };
 
+  //PnC calculator
+  const PnC = () => {
+    const [n, setN] = useState(null);
+    const [r, setR] = useState(null);
+    const [choice, setChoice] = useState("Permutation");
+    const [choiceData, setChoiceData] = useState({
+      name: "Permutation",
+    });
+    const [result, setResult] = useState(null);
+    const handleChange = (e) => {
+      reset();
+      setChoice(e.target.value);
+    }
+    function reset() {
+      setN(null);
+      setR(null);
+      setResult(null);
+    }
+    function factorial(x){
+      var result = 1;
+      for (let i = 1; i <= x; i++)
+        result *= i;
+      return result;
+    }
+    const calcResult = () => {
+      
+      if (choice == "Permutation") {
+        if(n>=r)
+          setResult(factorial(n) / factorial(n - r));
+        else
+        alert("The value of n should not be less than r.Please enter valid values for n and r");
+      }
+      else  if(choice=="Combination"){
+          if(n>=r)
+          setResult(factorial(n) / (factorial(r) * factorial(n - r)));
+          else
+          alert("The value of n should not be less than r.Please enter valid values for n and r");
+      }
+    }
+    useEffect(() => {
+      if (choice == "Permutation")
+        setChoiceData({ name:"Permutation" });
+      else
+        setChoiceData({ name:"Combination" });
+    }, [choice]);
+  
+    
     return (
       <>
         <Form>
+          <Form.Group className="mb-4" controlId="choice">
+            <Form.Label>Select the type of calculation</Form.Label>
+            <Form.Control
+              as="select"
+              className="select-custom-res"
+              onChange={(e) => handleChange(e)}
+            >
+              <option value="Permutation">Permutation</option>
+              <option value="Combination">Combination</option>
+            </Form.Control>
+          </Form.Group>
           <Form.Group className="mb-4" controlId="text">
             <Form.Text className="text">
               <strong>
-                {" "}
-                To find the Permutation, Enter the following values
+                To find the {choiceData.name}, Enter the following values
               </strong>
               <br />
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-4">
-            <Form.Label>Value in a Set (n)</Form.Label>
+            <Form.Label>Value of N</Form.Label>
             <Form.Control
-              onChange={(e) => setn(e.target.value)}
+              onChange={(e) => setN(Number(e.target.value))}
               type="number"
               placeholder={"Enter the value of n"}
               value={n === null ? "" : n}
             />
           </Form.Group>
           <Form.Group className="mb-4">
-            <Form.Label>Value in Sub-Set (r)</Form.Label>
+            <Form.Label>Value of R</Form.Label>
             <Form.Control
-              onChange={(e) => setr(e.target.value)}
+              onChange={(e) => setR(Number(e.target.value))}
               type="number"
               placeholder={"Enter the value of r"}
               value={r === null ? "" : r}
             />
           </Form.Group>
-
           <Form.Group className="mb-4">
             <Form.Control
               readOnly
@@ -267,7 +361,7 @@ function Calculator() {
           </Form.Group>
         </Form>
         <div className="button-custom-grp">
-          <Button variant="primary" onClick={calcPermutation}>
+          <Button variant="primary" onClick={calcResult}>
             Calculate
           </Button>
           &nbsp;&nbsp;&nbsp;
@@ -276,80 +370,14 @@ function Calculator() {
           </Button>
         </div>
       </>
-    );
-  };
-  //Combination
-  const Combination = () => {
-    const [n, setn] = useState(null);
-    const [r, setr] = useState(null);
-    const [result, setResult] = useState(null);
-    const reset = () => {
-      setn(null);
-      setr(null);
-      setResult(null);
-    };
-    function factorial(num) {
-      if (num === 0) {
-        return 1;
-      }
-      return num * factorial(num - 1);
-    }
-    const calcCombination = () => {
-      let Combination = factorial(n) / (factorial(r) * factorial(n - r));
-      setResult(Combination);
-    };
+    )
+  }
+ 
 
-    return (
-      <>
-        <Form>
-          <Form.Group className="mb-4" controlId="text">
-            <Form.Text className="text">
-              <strong>
-                {" "}
-                To find the Permutation, Enter the following values
-              </strong>
-              <br />
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-4">
-            <Form.Label>Value in a Set (n)</Form.Label>
-            <Form.Control
-              onChange={(e) => setn(e.target.value)}
-              type="number"
-              placeholder={"Enter the value of n"}
-              value={n === null ? "" : n}
-            />
-          </Form.Group>
-          <Form.Group className="mb-4">
-            <Form.Label>Value in Sub-Set (r)</Form.Label>
-            <Form.Control
-              onChange={(e) => setr(e.target.value)}
-              type="number"
-              placeholder={"Enter the value of r"}
-              value={r === null ? "" : r}
-            />
-          </Form.Group>
+   
 
-          <Form.Group className="mb-4">
-            <Form.Control
-              readOnly
-              type="number"
-              placeholder={result === null ? "Result" : result + " "}
-            />
-          </Form.Group>
-        </Form>
-        <div className="button-custom-grp">
-          <Button variant="primary" onClick={calcCombination}>
-            Calculate
-          </Button>
-          &nbsp;&nbsp;&nbsp;
-          <Button variant="dark" onClick={() => reset()} type="reset">
-            Reset
-          </Button>
-        </div>
-      </>
-    );
-  };
+          
+  
 
   //Pogression Calculator - AP/GP
   const Progression = () => {
@@ -516,7 +544,7 @@ function Calculator() {
       }
     }, [choice]);
 
-    useEffect(() => {}, [choice, x, n, result]);
+    useEffect(() => { }, [choice, x, n, result]);
 
     const calcResult = () => {
       let res = 1;
@@ -600,6 +628,184 @@ function Calculator() {
       </>
     );
   };
+
+  
+  //Probability Calculator
+  const Probability = () => {
+    const [a, setA] = useState();   //a is the probablity of first event.
+    const [b, setB] = useState();   // b is the probablity of second event.
+    const [union, setUnion] = useState();            //P(A | B)
+    const [aNotOccuring, setaNotOccuring] = useState(null);  //P(A')
+    const [bNotOccuring, setbNotOccuring] = useState(null);  //P(B')
+    const [bothOccuring, setBothOccuring] = useState(null);   //P(A & B)
+    const [onlyAOccurs, setOnlyAOccurs] = useState(null);
+    const [onlyBOccurs, setOnlyBOccurs] = useState(null);
+    function reset(){
+      setA(null);
+      setB(null);
+      setUnion(null);
+      setaNotOccuring(null);
+      setbNotOccuring(null);
+      setBothOccuring(null);
+      setOnlyAOccurs(null);
+      setOnlyBOccurs(null);
+    }
+   
+   
+    const calcResult = () => {
+      if(union<Math.max(a,b))
+      alert("The Probability of Occurence of either of 2 events should not be lesser than the Probaility of occurence of each of them");
+      else
+      {
+      setaNotOccuring(parseFloat((1-a).toFixed(10)));
+      setbNotOccuring(parseFloat((1-b).toFixed(10)));
+      setBothOccuring(parseFloat((a + b-union).toFixed(10)));
+      setOnlyAOccurs(parseFloat((union-b).toFixed(10)));
+      setOnlyBOccurs(parseFloat((union-a).toFixed(10)));
+      }
+    }
+    return (
+      <>
+        <Form>
+          <Form.Group className="mb-4">
+            <Form.Label>Enter the Probablity of First Event</Form.Label>
+            <Form.Control
+              onChange={(e) => setA(Number(e.target.value))}
+              type="number"
+              value={a ==null ? "" : a}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Enter the Probablity of Second Event</Form.Label>
+            <Form.Control
+              onChange={(e) => setB(Number(e.target.value))}
+              type="number"
+              value={b ==null ? "" : b}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Enter the Probablity of Occurence of either of the events</Form.Label>
+            <Form.Control
+              onChange={(e) => setUnion(Number(e.target.value))}
+              type="number"
+              value={union ==null ? "" : union}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Probablity of Non-Occurence of First Event</Form.Label>
+            <Form.Control
+              type="number"
+              disabled="true"
+              value={aNotOccuring ==null ? "" : aNotOccuring}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Probablity of Non-Occurence of Second Event</Form.Label>
+            <Form.Control
+              type="number"
+              disabled="true"
+              value={bNotOccuring ==null ? "" : bNotOccuring}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Probability of Occurence of Both Events</Form.Label>
+            <Form.Control
+              type="number"
+              disabled="true"
+              value={bothOccuring ==null ? "" : bothOccuring}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Probability that only the first event occurs</Form.Label>
+            <Form.Control
+              type="number"
+              disabled="true"
+              value={onlyAOccurs ==null ? "" :onlyAOccurs}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Probability that only the second event occurs</Form.Label>
+            <Form.Control
+              type="number"
+              disabled="true"
+              value={onlyBOccurs ==null ? "" : onlyBOccurs}
+            />
+          </Form.Group>
+        </Form>
+        <div className="button-custom-grp">
+          <Button variant="primary" onClick={calcResult}>
+            Calculate
+          </Button>
+          &nbsp;&nbsp;&nbsp;
+          <Button variant="dark" onClick={(e) =>reset()} type="reset">
+            Reset
+          </Button>
+        </div>
+        &nbsp; &nbsp;
+        <div className="formula-table mb-4">
+          <table className="formulae">
+            <thead>
+              <section className="m-2">
+                <tr>
+                  <h3>Probability Formulae</h3>
+                </tr>
+              </section>
+
+              <tr>
+                <th className="row-1 row-ID  "> Quantities</th>
+                <th className="row-2 row-name ">Equation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>P(A')</td>
+                <td>
+                  <b>
+                   1-P(A)
+                  </b>{" "}
+                  , where P(A) is probability of occurence of A.
+                </td>
+              </tr>
+              <tr>
+                <td>P(B')</td>
+                <td>
+                    <div>
+                      <b>1-P(B)</b> , where P(B) is the probability of occurence of B.
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>P(A ∩ B)</td>
+                <td>
+                  <b>P(A) + P(B) - P(A ∪ B)</b>, where A ∪ B represents occurence of either of the events
+                </td>
+              </tr>
+              <tr>
+                <td>P(only A occurs)</td>
+                <td>
+                  <b>
+                   P(A)-P(A ∩ B)
+                  </b>, where A ∩ B represents occurence of both events
+                </td>
+              </tr>
+              <tr>
+                <td>P(only B occurs)</td>
+                <td>
+                  <b>
+                   P(B)-P(A ∩ B)
+                  </b>, where A ∩ B represents occurence of both events
+                </td>
+              </tr>
+
+              
+               
+            </tbody>
+          </table>
+        </div>
+      </>);
+
+  }
+
 
   // Statistics calculator
   const Statistics = () => {
@@ -1504,11 +1710,11 @@ function Calculator() {
   function calC(key) {
     let currentCall;
     switch (key) {
-      case "Permutation":
-        currentCall = Permutation();
+      case "Permutation And Combination":
+        currentCall=PnC();
         break;
-      case "Combination":
-        currentCall = Combination();
+      case "Probability":
+        currentCall=Probability();
         break;
       case "Progression":
         currentCall = Progression();
@@ -1559,7 +1765,15 @@ function Calculator() {
         </div>
         <div className="Calculator__example">
           <h3>Example</h3>
-          <p>{details.example}</p>
+          <div className="row">
+            <div className="col-sm-6 col-lg-6 ">
+              <p>{details.example1}</p>
+            </div>
+
+            <div className="col-sm-6 col-lg-6 ">
+              <p>{details.example2}</p>
+            </div>
+          </div>
         </div>
         <div className="Calculator__calc">
           <h3>{details.topic} Calculator</h3>
